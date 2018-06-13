@@ -1,35 +1,54 @@
+п»ї/* Task 3 */
 var t1=process.argv[2];
 var t2=process.argv[3];
 
-var s=+t1 + +t2;
-console.log(s);
-var str=' секунд секунды минут час ';
+var rez=+t1 + +t2;
+//console.log(rez);
 
 var h=0;
 var m=0;
+var s=0;
+var sec=min=hou='';
 var vr;
 
 if(t1>=1 && t2>=1 && t1<=100000 && t2<=100000)
 {
-if (s<60) 
-{ 
-	if (s%10==0)
-	{ vr = s + str.slice(0,7);}
-	else
-	{ vr = s + ' секунды';}
-}
-else { 
-	m=s/60;
+	h=rez/3600;
+	h=h-h%1;
+	m=(rez%3600)/60;
 	m=m-m%1;
-	s=s-m*60;//секунды
-	vr=m+' минут '+s+' секунд';
-	if (m>=60)
-		{ h=m/60;
-		h=h-h%1;
-		m=m-h*60;
-		vr=h+' час '+m+' минут '+s+' секунд';
-		}
-	}
+	s=(rez%3600)%60;
+	
+
+	if (s%10==1 && s!=11)
+	{ sec= ' СЃРµРєСѓРЅРґР°';}
+	else if (s<5 && s>1 || s%10>1 && s%10<5)
+	{ sec=' СЃРµРєСѓРЅРґС‹';}
+	else
+	{sec = ' СЃРµРєСѓРЅРґ';}
+
+	if (m%10==1 && m!=11)
+	{ min= ' РјРёРЅСѓС‚Р°';}
+	else if (m<5 && m>1 || m%10>1 && m%10<5)
+	{ min=' РјРёРЅСѓС‚С‹';}
+	else
+	{min = ' РјРёРЅСѓС‚';}
+
+	if (h%10==1 && h!=11)
+	{ hou= ' С‡Р°СЃ';}
+	else if (h<5 && h>1 || h%10>1 && h%10<5)
+	{ hou=' С‡Р°СЃР°';}
+	else
+	{hou = ' С‡Р°СЃРѕРІ';}
+
+if (h!=0)
+{
+vr=h+hou+' '+m+min+' '+s+sec;
+} 
+else
+{vr=m+min+' '+s+sec;}
+if (h==0 && m==0)
+{vr=s+sec;}
 
 console.log(vr);
 }
