@@ -1,3 +1,5 @@
+п»ї/* Task 1 */
+
 function pow(x, n) {
   var result = x;
 
@@ -17,10 +19,12 @@ var d;
 var bukva='abcdefjhijklmnopqrstuvwxyz';
 //console.log(i.length);
 
+
 for (j=0;j<i.length;j++)
-{
+{ 
 p.push(i[j]);
 }
+
 
 
 for (j=0;j<i.length;j++)
@@ -35,13 +39,24 @@ for (j=0;j<i.length;j++)
 }
 
 
+for (j=0;j<i.length;j++)
+{ 
+	if (p[j] >= +a)
+	{
+	//console.log(p[j]);
+	return;
+	}
+}
+//console.log(a);
+
+
 var chislo=+p.slice(-1);
 for (j=1;j<i.length;j++)
 {
 chislo=chislo+pow(a,j)*p[i.length-j-1];
 }
 
-//chislo=parseInt(i,a);//в десятичной	
+//chislo=parseInt(i,a);//РІ РґРµСЃСЏС‚РёС‡РЅРѕР№	
 
 
 
@@ -51,7 +66,7 @@ if (b!=10)
 {
 	while (chislo>=b)
 	{
-	var total=c.push(chislo%b); //total-количество элементов в массиве
+	var total=c.push(chislo%b); //total-РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РІ РјР°СЃСЃРёРІРµ
 	d=chislo/b;
 	d=d-d%1;
 	chislo=d;
@@ -70,9 +85,9 @@ total=c.push(chislo);
 		}	
 	}
 
-c.reverse(); //обратный порядок
-var str=c.join(''); //склеить 
-console.log(str);
+c.reverse(); //РѕР±СЂР°С‚РЅС‹Р№ РїРѕСЂСЏРґРѕРє
+var str=c.join(''); //СЃРєР»РµРёС‚СЊ 
+process.stdout.write(str);
 }
 else 
 console.log(chislo);
